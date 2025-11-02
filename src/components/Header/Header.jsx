@@ -2,7 +2,7 @@ import React from 'react'
 import { IoIosSearch } from "react-icons/io";
 import { GiDeliveryDrone } from "react-icons/gi";
 import { IoLocationSharp } from "react-icons/io5";
-
+import { Link } from 'react-router-dom';
 import classes from "./header.module.css";
 import Lowerheader from './Lowerheader';
 const Header = () => {
@@ -12,12 +12,12 @@ const Header = () => {
         <div className={classes.logo_container}>
           {/* logo */}
 
-          <a href="#">
+          <Link to="/">
             <img
               src="https://pngimg.com/uploads/amazon/small/amazon_PNG11.png"
               alt="amazon logo"
             />
-          </a>
+          </Link>
         </div>
         {/* delivery */}
         <div className={classes.delivery}>
@@ -50,23 +50,23 @@ const Header = () => {
             </select>
           </a>
           {/* three components */}
-          <a href="">
+          <Link to="/auth">
             <div>
               <p>Sign In</p>
               <span>Account & Lists</span>
             </div>
-          </a>
+          </Link>
           {/* orders */}
-          <a href="">
+          <Link to="/orders">
             <p>returns</p>
             <span>& orders</span>
-          </a>
+          </Link>
           {/* cart */}
-          <a href='' className={classes.cart}>
+          <Link to='/cart' className={classes.cart}>
             {/* icon */}
             <GiDeliveryDrone size={35} />
             <span>0</span>
-          </a>
+          </Link>
         </div>
       </section>
       <Lowerheader />
