@@ -4,24 +4,25 @@ import CurrencyFormat from '../currencyFormat/CurrencyFormat';
 import classes from './Product.module.css'
 import { Link } from 'react-router-dom';
 
-const Productcard = ({product}) => {
-    const {image, title, id, price, rating} = product;
+const Productcard = ({product, flex, renderDesc}) => {
+    const {image, title, id, price, rating, description} = product;
   return (
-    <div className={classes.card_container}>
+    <div className={`${classes.card_container} ${flex?classes.product_flexed : ''}`}>
       <Link to={`/products/${id}`}>
         <img src={image} alt="" />
       </Link>
       <div>
         <h3 className={classes.title}>{title}</h3>
+{renderDesc && <div style={{maxWidth: '720px'}}>{description}</div>}
         <div className={classes.rating}>
           {/* rating */}
           <Rating
             name="full rated"
-            defaultValue={rating.rate}
+            defaultValue={rating?.rate}
             precision={0.1}
           />
           {/* count */}
-          <small>{rating.count}</small>
+          <small>{rating?.count}</small>
         </div>
         <div>
           {/* price */}
