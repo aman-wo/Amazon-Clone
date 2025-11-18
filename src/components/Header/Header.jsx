@@ -10,7 +10,7 @@ const Header = () => {
 
   const [{basket}, dispatch]=useContext(DataContext)
   return (
-    <>
+    <section className={classes.fixed}>
       <section className={classes.header_container}>
         <div className={classes.logo_container}>
           {/* logo */}
@@ -73,7 +73,7 @@ const Header = () => {
         </div>
       </section>
       <Lowerheader />
-    </>
+    </section>
   );
 }
 
