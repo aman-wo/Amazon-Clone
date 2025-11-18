@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { IoIosSearch } from "react-icons/io";
 import { GiDeliveryDrone } from "react-icons/gi";
 import { IoLocationSharp } from "react-icons/io5";
 import { Link } from 'react-router-dom';
 import classes from "./header.module.css";
 import Lowerheader from './Lowerheader';
+import  { DataContext } from '../dataProvider/DataProvider';
 const Header = () => {
+
+  const [{basket}, dispatch]=useContext(DataContext)
   return (
     <>
       <section className={classes.header_container}>
@@ -65,7 +68,7 @@ const Header = () => {
           <Link to='/cart' className={classes.cart}>
             {/* icon */}
             <GiDeliveryDrone size={35} />
-            <span>0</span>
+            <span>{basket.length}</span>
           </Link>
         </div>
       </section>
