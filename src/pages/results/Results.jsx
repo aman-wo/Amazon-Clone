@@ -32,7 +32,7 @@ const Results = () => {
             <hr />
             <div className={classes.products_container}>
               {results?.map((product) => (
-                <Productcard key={product.id} product={product} />
+                <Productcard key={product.id} product={product} renderAdd={true} />
               ))}
             </div>
           </section>
